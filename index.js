@@ -95,3 +95,23 @@ score = 25;
 }
   return score
 }  
+function max(map) {
+  var max = 0;
+ map.sort();
+  max = map[map.length - 1];
+  return max;
+}
+function cat(map) {
+  var score = [Yahtzee(map), four(map), straight(map)], result = 0;
+  score.sort();
+  result = score[score.length - 1];
+  return result
+}
+function roll() {
+var count = 0, score = 0;
+  while (score < 25) {
+    count = count + 1;
+    score = cat(five_dice());
+  }
+    return count;
+}
